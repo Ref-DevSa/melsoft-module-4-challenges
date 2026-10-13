@@ -131,14 +131,58 @@ let attendees = [
 
 // Challenge 7: Food Voucher Rewards
 
+// for (let i = 0; i < attendees.length; i++) {
+//   if (attendees[i].spend >= 1000) {
+//     console.log(`${attendees[i].name} receives R200 food voucher`);
+//   } else if (attendees[i].spend >= 500) {
+//     console.log(`${attendees[i].name} receives R100 food voucher`);
+//   } else if (attendees[i].spend >= 300) {
+//     console.log(`${attendees[i].name} receives R50 food voucher`);
+//   } else {
+//     console.log(`${attendees[i].name} receives No food voucher`);
+//   }
+// }
+
+// Challenge 8: Festival Statistics
+
+let validTickets = 0;
+
 for (let i = 0; i < attendees.length; i++) {
-  if (attendees[i].spend >= 1000) {
-    console.log(`${attendees[i].name} receives R200 food voucher`);
-  } else if (attendees[i].spend >= 500) {
-    console.log(`${attendees[i].name} receives R100 food voucher`);
-  } else if (attendees[i].spend >= 300) {
-    console.log(`${attendees[i].name} receives R50 food voucher`);
-  } else {
-    console.log(`${attendees[i].name} receives No food voucher`);
+  if (attendees[i].hasTicket === true) {
+    validTickets++;
   }
 }
+
+console.log(`Number of valid tickets: ${validTickets}`);
+
+let invalidTickets = 0;
+
+for (let i = 0; i < attendees.length; i++) {
+  if (attendees[i].hasTicket === true) {
+    invalidTickets++;
+  }
+}
+
+console.log(`Number of invalid tickets: ${invalidTickets}`);
+
+let under18 = 0;
+
+for (let i = 0; i < attendees.length; i++) {
+  if (attendees[i].age < 18 === true) {
+    under18++;
+  }
+}
+
+console.log(`Number of attendees under 18: ${under18}`);
+
+let vipCount = 0;
+
+for (let i = 0; i < attendees.length; i++) {
+  if (attendees[i].ticket === vip_holders) {
+    vipCount++;
+  }
+}
+
+console.log(`Number of Vip tickets: ${vipCount}`);
+
+let generalCount = 0;
