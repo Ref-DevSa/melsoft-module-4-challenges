@@ -100,20 +100,34 @@ let attendees = [
 
 // Challenge 5: Find a Person in the Queue
 
-let searchName = "Zanele";
-let attendeeFound = false;
+// let searchName = "Zanele";
+// let attendeeFound = false;
+
+// for (let i = 0; i < attendees.length; i++) {
+//   if (attendees[i].name === searchName) {
+//     console.log("Attendee found:", attendees[i]);
+
+//     attendeeFound = true;
+
+//     break; // Stops the for loop immediately when the attendee is found
+//   }
+// }
+
+// if (attendeeFound === false) {
+//   console.log(`No attendee found with the name "${searchName}".`);
+// }
+
+// Challenge 6: Security Fast Lane
+
+let hasTicket = false;
+
 
 for (let i = 0; i < attendees.length; i++) {
-  if (attendees[i].name === searchName) {
-    console.log("Attendee found:", attendees[i]);
-
-    attendeeFound = true;
-
-    break; // Stops the for loop immediately when the attendee is found
+  if (attendees[i].hasTicket === false) {
+    console.log(`${attendees[i].name} is skipped because; no valid ticket.`);
+    continue; 
   }
+  console.log(`${attendees[i].name} can be processed.`);
 }
 
-if (attendeeFound === false) {
-  console.log(`No attendee found with the name "${searchName}".`);
-}
-
+// Challenge 7: Food Voucher Rewards
