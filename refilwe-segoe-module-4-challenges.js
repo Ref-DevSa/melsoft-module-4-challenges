@@ -186,3 +186,13 @@ for (let i = 0; i < attendees.length; i++) {
 console.log(`Number of Vip tickets: ${vipCount}`);
 
 let generalCount = 0;
+
+// Challenge 9: Find the Biggest Spender
+
+let biggestSpender = attendees[0];
+
+for (let i = 0; i < attendees.length; i++) {
+  if (attendees[i].biggestSpender === vip_holders) {
+   console.log(`${biggestSpender}`)
+  } 
+}
