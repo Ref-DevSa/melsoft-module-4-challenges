@@ -1,23 +1,4 @@
-// A large music festival is taking place this weekend. Thousands of people are expected to
-// attend, but the festival's automated access system is not ready. You have been hired as a
-// junior JavaScript developer to create a simplified Festival Access & Crowd Control System.
-// Your program will process festival attendees and decide:
-// • who may enter
-// Answer: 
-
-// • who must be denied entry
-// • who gets VIP access
-// • who requires an age check
-// • who receives food vouchers
-// • how many people are inside
-// • whether the venue is approaching capacity
-// • when entry should be stopped
-// Security first needs to see everyone waiting to enter. Use a for...of loop to display each
-// attendee's name, age, ticket type and ticket validity. Your loop must process the entire array
-// automatically. Do not write separate output statements for individual attendees.
-
-// Answer: 
-
+// Challenge 1 : View the Queue
 let attendees = [
 { name: "Lebo", age: 22, ticket: "General", hasTicket: true, checkedIn: false, spend: 350 },
 { name: "Aisha", age: 19, ticket: "VIP", hasTicket: true, checkedIn: false, spend: 1200 },
@@ -29,3 +10,36 @@ let attendees = [
 { name: "Michael", age: 28, ticket: "General", hasTicket: true, checkedIn: false, spend: 450 }
 ];
 
+// for (const attendee of attendees) {
+//   console.log(
+//     `Name: ${attendee.name}, Age: ${attendee.age}, Ticket: ${attendee.ticket}, Ticket valid: ${attendee.hasTicket}`
+//   );
+
+//   if (attendee.age >= 18 && attendee.hasTicket === true) {
+//     console.log(`${attendee.name}: ENTRY APPROVED`);
+//   } else if (attendee.age < 18) {
+//     console.log(`${attendee.name}: ENTRY DENIED - UNDER 18`);
+//   } else {
+//     console.log(`${attendee.name}: ENTRY DENIED - NO VALID TICKET`);
+//   }
+// }
+
+// Challenge 2: Who Can Enter?
+
+// The festival is an 18+ event. An attendee may enter only when age >= 18 AND hasTicket ===
+// true. Display ENTRY APPROVED or ENTRY DENIED. If entry is denied, explain whether the
+// reason is UNDER 18 or NO VALID TICKET. Use if, else if, else and logical operators.
+
+for (const attendee of attendees) {
+  console.log(
+    `Name: ${attendee.name}, Age: ${attendee.age}, Ticket: ${attendee.ticket}, Ticket valid: ${attendee.hasTicket}`
+  );
+
+  if (attendee.age >= 18 && attendee.hasTicket === true) {
+    console.log(`${attendee.name}: ENTRY APPROVED`);
+  } else if (attendee.age < 18) {
+    console.log(`${attendee.name}: ENTRY DENIED - UNDER 18`);
+  } else {
+    console.log(`${attendee.name}: ENTRY DENIED - NO VALID TICKET`);
+  }
+}
