@@ -1,70 +1,14 @@
 // Challenge 1 : View the Queue
 
 let attendees = [
-  {
-    name: "Lebo",
-    age: 22,
-    ticket: "General",
-    hasTicket: true,
-    checkedIn: false,
-    spend: 350,
-  },
-  {
-    name: "Aisha",
-    age: 19,
-    ticket: "VIP",
-    hasTicket: true,
-    checkedIn: false,
-    spend: 1200,
-  },
-  {
-    name: "Thabo",
-    age: 17,
-    ticket: "General",
-    hasTicket: true,
-    checkedIn: false,
-    spend: 250,
-  },
-  {
-    name: "Naledi",
-    age: 25,
-    ticket: "VIP",
-    hasTicket: true,
-    checkedIn: false,
-    spend: 850,
-  },
-  {
-    name: "Jason",
-    age: 31,
-    ticket: "General",
-    hasTicket: false,
-    checkedIn: false,
-    spend: 0,
-  },
-  {
-    name: "Zanele",
-    age: 20,
-    ticket: "General",
-    hasTicket: true,
-    checkedIn: false,
-    spend: 650,
-  },
-  {
-    name: "Karabo",
-    age: 16,
-    ticket: "VIP",
-    hasTicket: true,
-    checkedIn: false,
-    spend: 900,
-  },
-  {
-    name: "Michael",
-    age: 28,
-    ticket: "General",
-    hasTicket: true,
-    checkedIn: false,
-    spend: 450,
-  },
+{ name: "Lebo", age: 22, ticket: "General", hasTicket: true, checkedIn: false, spend: 350 },
+{ name: "Aisha", age: 19, ticket: "VIP", hasTicket: true, checkedIn: false, spend: 1200 },
+{ name: "Thabo", age: 17, ticket: "General", hasTicket: true, checkedIn: false, spend: 250 },
+{ name: "Naledi", age: 25, ticket: "VIP", hasTicket: true, checkedIn: false, spend: 850 },
+{ name: "Jason", age: 31, ticket: "General", hasTicket: false, checkedIn: false, spend: 0 },
+{ name: "Zanele", age: 20, ticket: "General", hasTicket: true, checkedIn: false, spend: 650 },
+{ name: "Karabo", age: 16, ticket: "VIP", hasTicket: true, checkedIn: false, spend: 900 },
+{ name: "Michael", age: 28, ticket: "General", hasTicket: true, checkedIn: false, spend: 450 }
 ];
 
 // for (const attendee of attendees) {
@@ -130,27 +74,46 @@ let attendees = [
 
 // Challenge 4: VIP Lounge Security
 
-for (const attendee of attendees) {
-  console.log(
-    `Name: ${attendee.name}, Age: ${attendee.age}, Ticket: ${attendee.ticket}, Ticket valid: ${attendee.hasTicket}`,
-  );
+// for (const attendee of attendees) {
+//   console.log(
+//     `Name: ${attendee.name}, Age: ${attendee.age}, Ticket: ${attendee.ticket}, Ticket valid: ${attendee.hasTicket}`,
+//   );
 
-  if (
-    attendee.hasTicket === true &&
-    attendee.ticket === "vip_holders" &&
-    attendee.age >= 18
-  ) {
-    console.log(`${attendee.name}: VIP LOUNGE ACCESS is APPROVED`);
-  } else {
-    console.log(`${attendee.name}: VIP LOUNGE ACCESS is DENIED`);
+//   if (
+//     attendee.hasTicket === true &&
+//     attendee.ticket === "vip_holders" &&
+//     attendee.age >= 18
+//   ) {
+//     console.log(`${attendee.name}: VIP LOUNGE ACCESS is APPROVED`);
+//   } else {
+//     console.log(`${attendee.name}: VIP LOUNGE ACCESS is DENIED`);
 
-    if (attendee.age < 18) {
-      console.log(`${attendee.name}: ENTRY DENIED - UNDER 18 for Vip Access.`);
-    } else if (attendee.hasTicket !== true) {
-      console.log(`${attendee.name}: ENTRY DENIED - NO VALID TICKET`);
-    } else {
-      console.log(`${attendee.name}: Must have VIP ticket for lounge access.`);
-    }
+//     if (attendee.age < 18) {
+//       console.log(`${attendee.name}: ENTRY DENIED - UNDER 18 for Vip Access.`);
+//     } else if (attendee.hasTicket !== true) {
+//       console.log(`${attendee.name}: ENTRY DENIED - NO VALID TICKET`);
+//     } else {
+//       console.log(`${attendee.name}: Must have VIP ticket for lounge access.`);
+//     }
+//   }
+// }
+
+// Challenge 5: Find a Person in the Queue
+
+let searchName = "Zanele";
+let attendeeFound = false;
+
+for (let i = 0; i < attendees.length; i++) {
+  if (attendees[i].name === searchName) {
+    console.log("Attendee found:", attendees[i]);
+
+    attendeeFound = true;
+
+    break; // Stops the for loop immediately when the attendee is found
   }
+}
+
+if (attendeeFound === false) {
+  console.log(`No attendee found with the name "${searchName}".`);
 }
 
