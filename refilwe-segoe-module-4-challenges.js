@@ -119,15 +119,26 @@ let attendees = [
 
 // Challenge 6: Security Fast Lane
 
-let hasTicket = false;
+// let hasTicket = false;
 
-
-for (let i = 0; i < attendees.length; i++) {
-  if (attendees[i].hasTicket === false) {
-    console.log(`${attendees[i].name} is skipped because; no valid ticket.`);
-    continue; 
-  }
-  console.log(`${attendees[i].name} can be processed.`);
-}
+// for (let i = 0; i < attendees.length; i++) {
+//   if (attendees[i].hasTicket === false) {
+//     console.log(`${attendees[i].name} is skipped because; no valid ticket.`);
+//     continue;
+//   }
+//   console.log(`${attendees[i].name} can be processed.`);
+// }
 
 // Challenge 7: Food Voucher Rewards
+
+for (let i = 0; i < attendees.length; i++) {
+  if (attendees[i].spend >= 1000) {
+    console.log(`${attendees[i].name} receives R200 food voucher`);
+  } else if (attendees[i].spend >= 500) {
+    console.log(`${attendees[i].name} receives R100 food voucher`);
+  } else if (attendees[i].spend >= 300) {
+    console.log(`${attendees[i].name} receives R50 food voucher`);
+  } else {
+    console.log(`${attendees[i].name} receives No food voucher`);
+  }
+}
